@@ -1,7 +1,6 @@
 <template>
   <div>
-    <!-- <RouterView /> -->
-    <h1>hjknhmnk</h1>
+    <RouterView/>
   </div>
 </template>
 
