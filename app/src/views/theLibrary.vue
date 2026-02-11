@@ -12,7 +12,6 @@
       {{ book.genre }}
       {{ book.rating }}
     </bookCard>
-    <button class="borrow" @click="borrowbook">Borrow Book</button>
   </div>
 </template>
 
@@ -21,10 +20,6 @@ import { ref } from 'vue'
 import bookCard from '@/components/bookCard.vue'
 import BorrowingBook from '@/components/borrowingBook.vue'
 const books = ref([{ name: 'Friren Beyond Journeys End', genre: 'Manga', rating: 'idk' }])
-const bookstobeborrowed = []
-function borrowbook() {
-  //add a way to select the book and add it to the list, the rest will be handled
-}
 </script>
 
 <style scoped></style>
