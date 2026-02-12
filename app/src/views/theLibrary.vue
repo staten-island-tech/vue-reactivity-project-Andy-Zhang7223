@@ -19,7 +19,8 @@
 import { ref } from 'vue'
 import bookCard from '@/components/bookCard.vue'
 import BorrowingBook from '@/components/borrowingBook.vue'
-const books = ref([{ name: 'Friren Beyond Journeys End', genre: 'Manga', rating: 'idk' }])
+const books = ref([{ name: 'Frieren Beyond Journeys End', genre: 'Manga', rating: 10 }])
+const bookstobeborrowed = ref([])
 </script>
 
 <style scoped></style>
