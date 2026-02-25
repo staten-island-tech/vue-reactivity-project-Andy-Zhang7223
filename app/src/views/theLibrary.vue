@@ -22,7 +22,6 @@ const books = ref([
   { name: 'Frieren Beyond Journeys End', genre: 'Manga', rating: 10 },
   { name: 'Chainsaw Man', genre: 'Manga', rating: 9 },
 ])
-const bookstobeborrowed = ref([])
 </script>
 
 <style scoped></style>

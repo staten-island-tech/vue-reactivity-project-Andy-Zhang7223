@@ -1,2 +1,2 @@
-import { ref } from "vue"
-const bookstobeborrowed = ref([])
+import { ref } from 'vue'
+export const bookstobeborrowed = ref([])
