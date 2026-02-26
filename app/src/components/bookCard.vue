@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import { store } from './store.js'
+// import { store } from './store.js'
 defineProps({
   book: {
     type: Object,
@@ -17,7 +17,7 @@ defineProps({
 })
 function storingbook(book) {
   console.log(book.name)
-  store.bookstobeborrowed.push(book.name)
+  // store.bookstobeborrowed.push(book.name)
 }
 </script>
 
