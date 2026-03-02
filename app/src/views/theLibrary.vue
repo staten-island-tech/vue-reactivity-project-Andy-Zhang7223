@@ -14,14 +14,73 @@
 import { ref } from 'vue'
 import bookCard from '@/components/bookCard.vue'
 import BorrowingBook from '@/components/borrowingBook.vue'
-const books = ref([
-  { name: 'Frieren Beyond Journeys End', genre: 'Manga', rating: 10 },
-  { name: 'Chainsaw Man', genre: 'Manga', rating: 9 },
-])
+//Used Chatgpt for the array...
+const books = [
+  {
+    name: "To Kill a Mockingbird",
+    author: "Harper Lee",
+    genre: "Classic / Historical Fiction",
+    rating: 4.26
+  },
+  {
+    name: "1984",
+    author: "George Orwell",
+    genre: "Dystopian / Science Fiction",
+    rating: 4.20
+  },
+  {
+    name: "The Great Gatsby",
+    author: "F. Scott Fitzgerald",
+    genre: "Classic / Literary Fiction",
+    rating: 3.93
+  },
+  {
+    name: "Harry Potter and the Sorcerer's Stone",
+    author: "J.K. Rowling",
+    genre: "Fantasy / Young Adult",
+    rating: 4.47
+  },
+  {
+    name: "The Lord of the Rings",
+    author: "J.R.R. Tolkien",
+    genre: "Epic Fantasy",
+    rating: 4.41
+  },
+  {
+    name: "The Hunger Games",
+    author: "Suzanne Collins",
+    genre: "Dystopian / Young Adult",
+    rating: 4.35
+  },
+  {
+    name: "Pride and Prejudice",
+    author: "Jane Austen",
+    genre: "Classic / Romance",
+    rating: 4.30
+  },
+  {
+    name: "The Book Thief",
+    author: "Markus Zusak",
+    genre: "Historical Fiction / Young Adult",
+    rating: 4.39
+  },
+  {
+    name: "The Alchemist",
+    author: "Paulo Coelho",
+    genre: "Philosophical Fiction / Adventure",
+    rating: 3.90
+  },
+  {
+    name: "The Da Vinci Code",
+    author: "Dan Brown",
+    genre: "Mystery / Thriller",
+    rating: 3.94
+  }
+];
 let bookstobeborrowed = ref([])
 function storingbook(book) {
   console.log(book.name)
-  bookstobeborrowed.value.push(book.name)
+  bookstobeborrowed.value.push(book)
 }
 </script>
 

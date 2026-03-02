@@ -1,8 +1,9 @@
 <template>
   <div>
-    <h1 class="bookname">{{ book.name }}</h1>
-    <h2>{{ book.genre }}</h2>
-    <h2>{{ book.rating }}</h2>
+    <h1>Title: {{ book.name }}</h1>
+    <h1>Author: {{ book.author }}</h1>
+    <h2>Genre: {{ book.genre }}</h2>
+    <h2>Goodreads Rating: {{ book.rating }}</h2>
     <slot></slot>
   </div>
 </template>

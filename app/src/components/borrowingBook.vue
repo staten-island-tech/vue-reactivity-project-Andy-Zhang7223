@@ -1,6 +1,7 @@
 <template>
   <div>
     <h1>{{ book.name }}</h1>
+    <h1>{{ book.author }}</h1>
     <h2>{{ book.genre }}</h2>
     <h2>{{ book.rating }}</h2>
   </div>
