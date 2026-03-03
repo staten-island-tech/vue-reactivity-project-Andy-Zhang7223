@@ -1,9 +1,9 @@
 <template>
   <div>
-    <h1>Title: {{ book.name }}</h1>
-    <h1>Author: {{ book.author }}</h1>
-    <h2>Genre: {{ book.genre }}</h2>
-    <h2>Goodreads Rating: {{ book.rating }}</h2>
+    <h2>Title: {{ book.name }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <p>Goodreads Rating: {{ book.rating }}</p>
     <slot></slot>
   </div>
 </template>
@@ -17,4 +17,8 @@ defineProps({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+div {
+  width: 20%;
+}
+</style>

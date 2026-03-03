@@ -1,9 +1,10 @@
 <template>
   <div>
-    <h1>{{ book.name }}</h1>
-    <h1>{{ book.author }}</h1>
-    <h2>{{ book.genre }}</h2>
-    <h2>{{ book.rating }}</h2>
+    <h2>{{ book.name }}</h2>
+    <p>{{ book.author }}</p>
+    <p>{{ book.genre }}</p>
+    <p>{{ book.rating }}</p>
+    <slot></slot>
   </div>
 </template>
 
