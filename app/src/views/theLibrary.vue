@@ -3,7 +3,7 @@
     <BorrowingBook v-for="book in bookstobeborrowed" :key="book.id" :book="book">
       <button @click="removingBook(book)" id="0">Remove This Book</button>
     </BorrowingBook>
-    <button>Finish Selecting Books</button>
+    <button @click="boughtBooks()">Finish Selecting Books</button>
   </div>
   <div>
     <bookCard v-for="book in books" :key="book.name" :book="book">
@@ -21,6 +21,7 @@ const books = [
   {
     id: 1,
     borrowed: false,
+    img: 'https://cdn2.penguin.com.au/covers/original/9780434020485.jpg',
     name: 'To Kill a Mockingbird',
     author: 'Harper Lee',
     genre: 'Classic / Historical Fiction',
@@ -29,6 +30,7 @@ const books = [
   {
     id: 2,
     borrowed: false,
+    img: '',
     name: '1984',
     author: 'George Orwell',
     genre: 'Dystopian / Science Fiction',
@@ -37,6 +39,7 @@ const books = [
   {
     id: 3,
     borrowed: false,
+    img: '',
     name: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     genre: 'Classic / Literary Fiction',
@@ -45,6 +48,7 @@ const books = [
   {
     id: 4,
     borrowed: false,
+    img: '',
     name: "Harry Potter and the Sorcerer's Stone",
     author: 'J.K. Rowling',
     genre: 'Fantasy / Young Adult',
@@ -53,6 +57,7 @@ const books = [
   {
     id: 5,
     borrowed: false,
+    img: '',
     name: 'The Lord of the Rings',
     author: 'J.R.R. Tolkien',
     genre: 'Epic Fantasy',
@@ -61,6 +66,7 @@ const books = [
   {
     id: 6,
     borrowed: false,
+    img: '',
     name: 'The Hunger Games',
     author: 'Suzanne Collins',
     genre: 'Dystopian / Young Adult',
@@ -69,6 +75,7 @@ const books = [
   {
     id: 7,
     borrowed: false,
+    img: '',
     name: 'Pride and Prejudice',
     author: 'Jane Austen',
     genre: 'Classic / Romance',
@@ -77,6 +84,7 @@ const books = [
   {
     id: 8,
     borrowed: false,
+    img: '',
     name: 'The Book Thief',
     author: 'Markus Zusak',
     genre: 'Historical Fiction / Young Adult',
@@ -85,6 +93,7 @@ const books = [
   {
     id: 9,
     borrowed: false,
+    img: '',
     name: 'The Alchemist',
     author: 'Paulo Coelho',
     genre: 'Philosophical Fiction / Adventure',
@@ -93,6 +102,7 @@ const books = [
   {
     id: 10,
     borrowed: false,
+    img: '',
     name: 'The Da Vinci Code',
     author: 'Dan Brown',
     genre: 'Mystery / Thriller',
@@ -101,7 +111,6 @@ const books = [
 ]
 let bookstobeborrowed = ref([])
 function storingBook(book) {
-  console.log(book.name)
   if (book.borrowed === true) {
     return
   } else {
@@ -111,7 +120,11 @@ function storingBook(book) {
 }
 function removingBook(book) {
   book.borrowed = false
-  //Don't use querySelector but maybe something like it?
+  bookstobeborrowed.value.splice(bookstobeborrowed.value.indexOf('book.name'), 1)
+}
+function boughtBooks() {
+  bookstobeborrowed.value.splice(0, 999)
+  books.forEach((book) => (book.borrowed = false))
 }
 </script>
 

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- <img src={{ book.img }} alt=""> -->
     <h2>{{ book.name }}</h2>
     <p>{{ book.author }}</p>
     <p>{{ book.genre }}</p>
