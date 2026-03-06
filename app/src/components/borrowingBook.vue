@@ -1,10 +1,10 @@
 <template>
   <div>
-    <!-- <img src={{ book.img }} alt=""> -->
-    <h2>{{ book.name }}</h2>
-    <p>{{ book.author }}</p>
-    <p>{{ book.genre }}</p>
-    <p>{{ book.rating }}</p>
+    <img :src="book.img" alt="" />
+    <h2>Title: {{ book.name }}</h2>
+    <p>Author: {{ book.author }}</p>
+    <p>Genre: {{ book.genre }}</p>
+    <p>Goodreads Rating: {{ book.rating }}</p>
     <slot></slot>
   </div>
 </template>

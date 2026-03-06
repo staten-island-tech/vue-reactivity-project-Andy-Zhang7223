@@ -1,12 +1,17 @@
 <template>
-  <div>
-    <BorrowingBook v-for="book in bookstobeborrowed" :key="book.id" :book="book">
+  <div class="borrowingDiv">
+    <BorrowingBook
+      class="borrowingCards"
+      v-for="book in bookstobeborrowed"
+      :key="book.id"
+      :book="book"
+    >
       <button @click="removingBook(book)" id="0">Remove This Book</button>
     </BorrowingBook>
     <button @click="boughtBooks()">Finish Selecting Books</button>
   </div>
-  <div>
-    <bookCard v-for="book in books" :key="book.name" :book="book">
+  <div class="booksDiv">
+    <bookCard class="bookCards" v-for="book in books" :key="book.name" :book="book">
       <button @click="storingBook(book)">Borrow This Book</button>
     </bookCard>
   </div>
@@ -17,6 +22,7 @@ import { ref } from 'vue'
 import bookCard from '@/components/bookCard.vue'
 import BorrowingBook from '@/components/borrowingBook.vue'
 //Used Chatgpt for the array...
+//trying to get images to work...
 const books = [
   {
     id: 1,
@@ -30,7 +36,7 @@ const books = [
   {
     id: 2,
     borrowed: false,
-    img: '',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQogxUXoWEtndRag9TwFDky-3svWQt6QgXP8w&s',
     name: '1984',
     author: 'George Orwell',
     genre: 'Dystopian / Science Fiction',
@@ -39,7 +45,7 @@ const books = [
   {
     id: 3,
     borrowed: false,
-    img: '',
+    img: 'https://m.media-amazon.com/images/I/81T4dS6IkaL._AC_UF1000,1000_QL80_.jpg',
     name: 'The Great Gatsby',
     author: 'F. Scott Fitzgerald',
     genre: 'Classic / Literary Fiction',
@@ -48,7 +54,7 @@ const books = [
   {
     id: 4,
     borrowed: false,
-    img: '',
+    img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlwU1Uvtx5Daltv4NJteo0IYEtVBu8NZTumw&s',
     name: "Harry Potter and the Sorcerer's Stone",
     author: 'J.K. Rowling',
     genre: 'Fantasy / Young Adult',
@@ -57,7 +63,7 @@ const books = [
   {
     id: 5,
     borrowed: false,
-    img: '',
+    img: 'https://m.media-amazon.com/images/I/81nV6x2ey4L._AC_UF1000,1000_QL80_.jpg',
     name: 'The Lord of the Rings',
     author: 'J.R.R. Tolkien',
     genre: 'Epic Fantasy',
@@ -66,7 +72,7 @@ const books = [
   {
     id: 6,
     borrowed: false,
-    img: '',
+    img: 'https://m.media-amazon.com/images/I/61I24wOsn8L._AC_UF1000,1000_QL80_.jpg',
     name: 'The Hunger Games',
     author: 'Suzanne Collins',
     genre: 'Dystopian / Young Adult',
@@ -75,7 +81,7 @@ const books = [
   {
     id: 7,
     borrowed: false,
-    img: '',
+    img: 'https://prodimage.images-bn.com/pimages/9780593622452_p0_v1_s600x595.jpg',
     name: 'Pride and Prejudice',
     author: 'Jane Austen',
     genre: 'Classic / Romance',
@@ -84,7 +90,7 @@ const books = [
   {
     id: 8,
     borrowed: false,
-    img: '',
+    img: 'https://cdn1.bookmanager.com/i/m?b=3W8tARS3yMxWkONRKgXF_w&cb=1709612196',
     name: 'The Book Thief',
     author: 'Markus Zusak',
     genre: 'Historical Fiction / Young Adult',
@@ -93,7 +99,7 @@ const books = [
   {
     id: 9,
     borrowed: false,
-    img: '',
+    img: 'https://m.media-amazon.com/images/I/81ioPZFMeUL._UF1000,1000_QL80_.jpg',
     name: 'The Alchemist',
     author: 'Paulo Coelho',
     genre: 'Philosophical Fiction / Adventure',
@@ -102,7 +108,7 @@ const books = [
   {
     id: 10,
     borrowed: false,
-    img: '',
+    img: 'https://m.media-amazon.com/images/I/91FWKxNXR9L._AC_UF1000,1000_QL80_.jpg',
     name: 'The Da Vinci Code',
     author: 'Dan Brown',
     genre: 'Mystery / Thriller',
@@ -120,7 +126,7 @@ function storingBook(book) {
 }
 function removingBook(book) {
   book.borrowed = false
-  bookstobeborrowed.value.splice(bookstobeborrowed.value.indexOf('book.name'), 1)
+  bookstobeborrowed.value.splice(bookstobeborrowed.value.indexOf(book), 1)
 }
 function boughtBooks() {
   bookstobeborrowed.value.splice(0, 999)
