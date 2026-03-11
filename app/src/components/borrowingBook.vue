@@ -1,6 +1,6 @@
 <template>
   <div>
-    <img :src="book.img" alt="" />
+    <img class="bookimg" :src="book.img" alt="" />
     <h2>Title: {{ book.name }}</h2>
     <p>Author: {{ book.author }}</p>
     <p>Genre: {{ book.genre }}</p>
@@ -18,4 +18,9 @@ defineProps({
 })
 </script>
 
-<style scoped></style>
+<style scoped>
+.bookimg {
+  width: 10%;
+  height: 10%;
+}
+</style>
